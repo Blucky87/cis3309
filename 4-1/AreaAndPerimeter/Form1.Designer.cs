@@ -48,7 +48,7 @@
             this.calcButton.TabIndex = 0;
             this.calcButton.Text = "Calculate";
             this.calcButton.UseVisualStyleBackColor = true;
-            this.calcButton.Click += new System.EventHandler(this.button1_Click);
+            this.calcButton.Click += new System.EventHandler(this.CalcButton_Click);
             // 
             // exitButton
             // 
@@ -58,7 +58,7 @@
             this.exitButton.TabIndex = 1;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.button2_Click);
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // txtLength
             // 

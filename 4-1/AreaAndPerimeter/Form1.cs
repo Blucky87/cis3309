@@ -13,7 +13,7 @@ namespace AreaAndPerimeter
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CalcButton_Click(object sender, EventArgs e)
         {
             txtArea.Text = (Decimal.Parse(txtLength.Text) * Decimal.Parse(txtWidth.Text)).ToString();
             txtPerimeter.Text = ((Decimal.Parse(txtLength.Text) * 2) + (Decimal.Parse(txtWidth.Text) * 2)).ToString();
@@ -21,21 +21,21 @@ namespace AreaAndPerimeter
             txtLength.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar.Equals('\u001b'))
+            switch (e.KeyChar)
             {
-                button2_Click(sender, e);
-            }
-
-            if (e.KeyChar.Equals('\r'))
-            {
-                button1_Click(sender, e);
+                case '\u001b':
+                    ExitButton_Click(sender, e);
+                    break;
+                case '\r':
+                    CalcButton_Click(sender, e);
+                    break;
             }
         }
 
