@@ -21,14 +21,14 @@ namespace SimpleCalculator
         {
             try
             {
-                decimal operand1 = Convert.ToDecimal(txtOperand1.Text);
-                string operator1 = txtOperator.Text;
-                decimal operand2 = Convert.ToDecimal(txtOperand2.Text);
+                decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
+                string operator1 = textBoxOperator.Text;
+                decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
                 decimal result = Calculate(operand1, operator1, operand2);
 
                 result = Math.Round(result, 4);
-                this.txtResult.Text = result.ToString();
-                txtOperand1.Focus();
+                this.textBoxResult.Text = result.ToString();
+                textBoxOperand1.Focus();
             }
             catch (FormatException)
             {
@@ -78,7 +78,7 @@ namespace SimpleCalculator
 
         private void ClearResult(object sender, EventArgs e)
         {
-            this.txtResult.Text = "";
+            this.textBoxResult.Text = "";
         }
     }
 }
