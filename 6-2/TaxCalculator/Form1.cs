@@ -17,14 +17,14 @@ namespace TaxCalculator
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
+        private void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            decimal income = Convert.ToDecimal(txtIncome.Text);
+            decimal income = Convert.ToDecimal(textBoxIncome.Text);
 
             decimal tax = 0m;
             if (income <= 9225)
@@ -42,7 +42,7 @@ namespace TaxCalculator
             else if (income > 413200)
                 tax = 119996.25m + (int)((income - 413200) * .396m);
 
-            txtTax.Text = tax.ToString();
+            textBoxTax.Text = tax.ToString();
         }
     }
 }

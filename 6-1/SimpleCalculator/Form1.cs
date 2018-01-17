@@ -1,17 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleCalculator
-{
-    public partial class Form1 : Form
-    {
+namespace SimpleCalculator {
+
+    public partial class Form1 : Form {
+
         public Form1()
         {
             InitializeComponent();
@@ -21,13 +14,13 @@ namespace SimpleCalculator
         {
             try
             {
-                decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
-                string operator1 = textBoxOperator.Text;
-                decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
-                decimal result = Calculate(operand1, operator1, operand2);
+                var operand1 = Convert.ToDecimal(textBoxOperand1.Text);
+                var operator1 = textBoxOperator.Text;
+                var operand2 = Convert.ToDecimal(textBoxOperand2.Text);
+                var result = Calculate(operand1, operator1, operand2);
 
                 result = Math.Round(result, 4);
-                this.textBoxResult.Text = result.ToString();
+                textBoxResult.Text = result.ToString();
                 textBoxOperand1.Focus();
             }
             catch (FormatException)
@@ -51,8 +44,8 @@ namespace SimpleCalculator
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "\n\n" +
-                ex.GetType().ToString() + "\n" +
-                ex.StackTrace, "Exception");
+                                ex.GetType() + "\n" +
+                                ex.StackTrace, "Exception");
             }
         }
 
@@ -73,12 +66,12 @@ namespace SimpleCalculator
 
         private void ButtonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ClearResult(object sender, EventArgs e)
         {
-            this.textBoxResult.Text = "";
+            textBoxResult.Text = "";
         }
     }
 }

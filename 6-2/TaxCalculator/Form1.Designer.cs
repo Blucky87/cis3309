@@ -78,7 +78,7 @@
             this.buttonCalculate.TabIndex = 4;
             this.buttonCalculate.Text = "&Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
             // buttonExit
             // 
@@ -89,7 +89,7 @@
             this.buttonExit.TabIndex = 5;
             this.buttonExit.Text = "E&xit";
             this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // Form1
             // 
