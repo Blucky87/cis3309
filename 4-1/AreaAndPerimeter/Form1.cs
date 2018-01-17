@@ -32,6 +32,11 @@ namespace AreaAndPerimeter
             {
                 button2_Click(sender, e);
             }
+
+            if (e.KeyChar.Equals('\r'))
+            {
+                button1_Click(sender, e);
+            }
         }
 
     }
