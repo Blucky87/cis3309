@@ -7,36 +7,22 @@ namespace AreaAndPerimeter
     {
         public Form1()
         {
-            KeyPreview = true;
-            KeyPress += Form1_KeyPress;
-
             InitializeComponent();
+
+            AcceptButton = buttonCalculate;
+            CancelButton = buttonExit;
         }
 
-        private void CalcButton_Click(object sender, EventArgs e)
-        {
-            txtArea.Text = (Decimal.Parse(txtLength.Text) * Decimal.Parse(txtWidth.Text)).ToString();
-            txtPerimeter.Text = ((Decimal.Parse(txtLength.Text) * 2) + (Decimal.Parse(txtWidth.Text) * 2)).ToString();
+        private void CalculateButton_Click(object sender, EventArgs e) {
 
-            txtLength.Focus();
+            textboxArea.Text = (Decimal.Parse(textboxLength.Text) * Decimal.Parse(textboxWidth.Text)).ToString();
+            textboxPerimeter.Text = ((Decimal.Parse(textboxLength.Text) * 2) + (Decimal.Parse(textboxWidth.Text) * 2)).ToString();
+
+            textboxLength.Focus();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
+        private void ExitButton_Click(object sender, EventArgs e) {
             Close();
-        }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            switch (e.KeyChar)
-            {
-                case '\u001b':
-                    ExitButton_Click(sender, e);
-                    break;
-                case '\r':
-                    CalcButton_Click(sender, e);
-                    break;
-            }
         }
 
     }
