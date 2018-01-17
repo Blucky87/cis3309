@@ -28,82 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIncome = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTax = new System.Windows.Forms.TextBox();
-            this.btnCalculate = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.labelIncome = new System.Windows.Forms.Label();
+            this.textBoxIncome = new System.Windows.Forms.TextBox();
+            this.labelTax = new System.Windows.Forms.Label();
+            this.textBoxTax = new System.Windows.Forms.TextBox();
+            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelIncome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Taxable income:";
+            this.labelIncome.AutoSize = true;
+            this.labelIncome.Location = new System.Drawing.Point(26, 50);
+            this.labelIncome.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelIncome.Name = "labelIncome";
+            this.labelIncome.Size = new System.Drawing.Size(170, 25);
+            this.labelIncome.TabIndex = 0;
+            this.labelIncome.Text = "Taxable income:";
             // 
-            // txtIncome
+            // textBoxIncome
             // 
-            this.txtIncome.Location = new System.Drawing.Point(113, 23);
-            this.txtIncome.Name = "txtIncome";
-            this.txtIncome.Size = new System.Drawing.Size(100, 20);
-            this.txtIncome.TabIndex = 1;
+            this.textBoxIncome.Location = new System.Drawing.Point(226, 44);
+            this.textBoxIncome.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxIncome.Name = "textBoxIncome";
+            this.textBoxIncome.Size = new System.Drawing.Size(196, 31);
+            this.textBoxIncome.TabIndex = 1;
             // 
-            // label2
+            // labelTax
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Income tax owed:";
+            this.labelTax.AutoSize = true;
+            this.labelTax.Location = new System.Drawing.Point(26, 100);
+            this.labelTax.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelTax.Name = "labelTax";
+            this.labelTax.Size = new System.Drawing.Size(179, 25);
+            this.labelTax.TabIndex = 2;
+            this.labelTax.Text = "Income tax owed:";
             // 
-            // txtTax
+            // textBoxTax
             // 
-            this.txtTax.Location = new System.Drawing.Point(113, 49);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.ReadOnly = true;
-            this.txtTax.Size = new System.Drawing.Size(100, 20);
-            this.txtTax.TabIndex = 3;
-            this.txtTax.TabStop = false;
+            this.textBoxTax.Location = new System.Drawing.Point(226, 94);
+            this.textBoxTax.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxTax.Name = "textBoxTax";
+            this.textBoxTax.ReadOnly = true;
+            this.textBoxTax.Size = new System.Drawing.Size(196, 31);
+            this.textBoxTax.TabIndex = 3;
+            this.textBoxTax.TabStop = false;
             // 
-            // btnCalculate
+            // buttonCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(44, 87);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculate.TabIndex = 4;
-            this.btnCalculate.Text = "&Calculate";
-            this.btnCalculate.UseVisualStyleBackColor = true;
-            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            this.buttonCalculate.Location = new System.Drawing.Point(88, 167);
+            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(150, 44);
+            this.buttonCalculate.TabIndex = 4;
+            this.buttonCalculate.Text = "&Calculate";
+            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
-            // btnExit
+            // buttonExit
             // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(138, 87);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "E&xit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonExit.Location = new System.Drawing.Point(276, 167);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(150, 44);
+            this.buttonExit.TabIndex = 5;
+            this.buttonExit.Text = "E&xit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // Form1
             // 
-            this.AcceptButton = this.btnCalculate;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.buttonCalculate;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(254, 127);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCalculate);
-            this.Controls.Add(this.txtTax);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtIncome);
-            this.Controls.Add(this.label1);
+            this.CancelButton = this.buttonExit;
+            this.ClientSize = new System.Drawing.Size(508, 244);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonCalculate);
+            this.Controls.Add(this.textBoxTax);
+            this.Controls.Add(this.labelTax);
+            this.Controls.Add(this.textBoxIncome);
+            this.Controls.Add(this.labelIncome);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Income Tax Calculator";
@@ -114,12 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIncome;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTax;
-        private System.Windows.Forms.Button btnCalculate;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label labelIncome;
+        private System.Windows.Forms.TextBox textBoxIncome;
+        private System.Windows.Forms.Label labelTax;
+        private System.Windows.Forms.TextBox textBoxTax;
+        private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

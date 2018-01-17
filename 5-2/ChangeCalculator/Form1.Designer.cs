@@ -23,135 +23,135 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.labelAmount = new System.Windows.Forms.Label();
+            this.labelQuarters = new System.Windows.Forms.Label();
+            this.labelDimes = new System.Windows.Forms.Label();
+            this.labelNickels = new System.Windows.Forms.Label();
+            this.labelPennies = new System.Windows.Forms.Label();
+            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.textBoxQuarters = new System.Windows.Forms.TextBox();
+            this.textBoxDimes = new System.Windows.Forms.TextBox();
+            this.textBoxNickels = new System.Windows.Forms.TextBox();
+            this.textBoxPennies = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonConfirm
             // 
-            this.button1.Location = new System.Drawing.Point(52, 211);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Location = new System.Drawing.Point(52, 211);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Size = new System.Drawing.Size(75, 23);
+            this.buttonConfirm.TabIndex = 0;
+            this.buttonConfirm.Text = "Calculate";
+            this.buttonConfirm.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonExit
             // 
-            this.button2.Location = new System.Drawing.Point(155, 211);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonExit.Location = new System.Drawing.Point(155, 211);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 1;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelAmount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Amount of change due (0-99):";
+            this.labelAmount.AutoSize = true;
+            this.labelAmount.Location = new System.Drawing.Point(25, 38);
+            this.labelAmount.Name = "labelAmount";
+            this.labelAmount.Size = new System.Drawing.Size(148, 13);
+            this.labelAmount.TabIndex = 2;
+            this.labelAmount.Text = "Amount of change due (0-99):";
             // 
-            // label2
+            // labelQuarters
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Quarters:";
+            this.labelQuarters.AutoSize = true;
+            this.labelQuarters.Location = new System.Drawing.Point(123, 79);
+            this.labelQuarters.Name = "labelQuarters";
+            this.labelQuarters.Size = new System.Drawing.Size(50, 13);
+            this.labelQuarters.TabIndex = 3;
+            this.labelQuarters.Text = "Quarters:";
             // 
-            // label3
+            // labelDimes
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Dimes:";
+            this.labelDimes.AutoSize = true;
+            this.labelDimes.Location = new System.Drawing.Point(134, 105);
+            this.labelDimes.Name = "labelDimes";
+            this.labelDimes.Size = new System.Drawing.Size(39, 13);
+            this.labelDimes.TabIndex = 4;
+            this.labelDimes.Text = "Dimes:";
             // 
-            // label4
+            // labelNickels
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Nickels:";
+            this.labelNickels.AutoSize = true;
+            this.labelNickels.Location = new System.Drawing.Point(128, 131);
+            this.labelNickels.Name = "labelNickels";
+            this.labelNickels.Size = new System.Drawing.Size(45, 13);
+            this.labelNickels.TabIndex = 5;
+            this.labelNickels.Text = "Nickels:";
             // 
-            // label5
+            // labelPennies
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(125, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Pennies:";
+            this.labelPennies.AutoSize = true;
+            this.labelPennies.Location = new System.Drawing.Point(125, 160);
+            this.labelPennies.Name = "labelPennies";
+            this.labelPennies.Size = new System.Drawing.Size(48, 13);
+            this.labelPennies.TabIndex = 6;
+            this.labelPennies.Text = "Pennies:";
             // 
-            // textBox1
+            // textBoxAmount
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxAmount.Location = new System.Drawing.Point(187, 35);
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(43, 20);
+            this.textBoxAmount.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxQuarters
             // 
-            this.textBox2.Location = new System.Drawing.Point(187, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 20);
-            this.textBox2.TabIndex = 8;
+            this.textBoxQuarters.Location = new System.Drawing.Point(187, 76);
+            this.textBoxQuarters.Name = "textBoxQuarters";
+            this.textBoxQuarters.Size = new System.Drawing.Size(43, 20);
+            this.textBoxQuarters.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxDimes
             // 
-            this.textBox3.Location = new System.Drawing.Point(187, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(43, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBoxDimes.Location = new System.Drawing.Point(187, 102);
+            this.textBoxDimes.Name = "textBoxDimes";
+            this.textBoxDimes.Size = new System.Drawing.Size(43, 20);
+            this.textBoxDimes.TabIndex = 9;
             // 
-            // textBox4
+            // textBoxNickels
             // 
-            this.textBox4.Location = new System.Drawing.Point(187, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(43, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxNickels.Location = new System.Drawing.Point(187, 128);
+            this.textBoxNickels.Name = "textBoxNickels";
+            this.textBoxNickels.Size = new System.Drawing.Size(43, 20);
+            this.textBoxNickels.TabIndex = 10;
             // 
-            // textBox5
+            // textBoxPennies
             // 
-            this.textBox5.Location = new System.Drawing.Point(187, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(43, 20);
-            this.textBox5.TabIndex = 11;
+            this.textBoxPennies.Location = new System.Drawing.Point(187, 157);
+            this.textBoxPennies.Name = "textBoxPennies";
+            this.textBoxPennies.Size = new System.Drawing.Size(43, 20);
+            this.textBoxPennies.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(242, 247);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxPennies);
+            this.Controls.Add(this.textBoxNickels);
+            this.Controls.Add(this.textBoxDimes);
+            this.Controls.Add(this.textBoxQuarters);
+            this.Controls.Add(this.textBoxAmount);
+            this.Controls.Add(this.labelPennies);
+            this.Controls.Add(this.labelNickels);
+            this.Controls.Add(this.labelDimes);
+            this.Controls.Add(this.labelQuarters);
+            this.Controls.Add(this.labelAmount);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonConfirm);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -161,18 +161,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.Label labelQuarters;
+        private System.Windows.Forms.Label labelDimes;
+        private System.Windows.Forms.Label labelNickels;
+        private System.Windows.Forms.Label labelPennies;
+        private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.TextBox textBoxQuarters;
+        private System.Windows.Forms.TextBox textBoxDimes;
+        private System.Windows.Forms.TextBox textBoxNickels;
+        private System.Windows.Forms.TextBox textBoxPennies;
     }
 }
 
