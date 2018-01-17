@@ -28,123 +28,123 @@ namespace SimpleCalculator
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnCalculate = new System.Windows.Forms.Button();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.txtOperand2 = new System.Windows.Forms.TextBox();
-            this.txtOperator = new System.Windows.Forms.TextBox();
-            this.txtOperand1 = new System.Windows.Forms.TextBox();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.TextBox();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.LabelResult = new System.Windows.Forms.Label();
+            this.textBoxOperand2 = new System.Windows.Forms.TextBox();
+            this.textBoxOperator = new System.Windows.Forms.TextBox();
+            this.textBoxOperand1 = new System.Windows.Forms.TextBox();
+            this.LabelOperand2 = new System.Windows.Forms.Label();
+            this.LabelOperator = new System.Windows.Forms.Label();
+            this.LabelOperand1 = new System.Windows.Forms.Label();
+            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnExit
+            // buttonExit
             // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(111, 147);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(72, 24);
-            this.btnExit.TabIndex = 29;
-            this.btnExit.Text = "E&xit";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonExit.Location = new System.Drawing.Point(111, 147);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(72, 24);
+            this.buttonExit.TabIndex = 29;
+            this.buttonExit.Text = "E&xit";
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
-            // btnCalculate
+            // buttonCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(23, 147);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(80, 24);
-            this.btnCalculate.TabIndex = 28;
-            this.btnCalculate.Text = "&Calculate";
-            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            this.buttonCalculate.Location = new System.Drawing.Point(23, 147);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(80, 24);
+            this.buttonCalculate.TabIndex = 28;
+            this.buttonCalculate.Text = "&Calculate";
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
-            // Label4
+            // LabelResult
             // 
-            this.Label4.Location = new System.Drawing.Point(23, 115);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(80, 16);
-            this.Label4.TabIndex = 26;
-            this.Label4.Text = "Result:";
-            this.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelResult.Location = new System.Drawing.Point(23, 115);
+            this.LabelResult.Name = "LabelResult";
+            this.LabelResult.Size = new System.Drawing.Size(80, 16);
+            this.LabelResult.TabIndex = 26;
+            this.LabelResult.Text = "Result:";
+            this.LabelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtOperand2
+            // textBoxOperand2
             // 
-            this.txtOperand2.Location = new System.Drawing.Point(111, 83);
-            this.txtOperand2.Name = "txtOperand2";
-            this.txtOperand2.Size = new System.Drawing.Size(72, 20);
-            this.txtOperand2.TabIndex = 25;
-            this.txtOperand2.TextChanged += new System.EventHandler(this.ClearResult);
+            this.textBoxOperand2.Location = new System.Drawing.Point(111, 83);
+            this.textBoxOperand2.Name = "textBoxOperand2";
+            this.textBoxOperand2.Size = new System.Drawing.Size(72, 20);
+            this.textBoxOperand2.TabIndex = 25;
+            this.textBoxOperand2.TextChanged += new System.EventHandler(this.ClearResult);
             // 
-            // txtOperator
+            // textBoxOperator
             // 
-            this.txtOperator.Location = new System.Drawing.Point(111, 51);
-            this.txtOperator.Name = "txtOperator";
-            this.txtOperator.Size = new System.Drawing.Size(24, 20);
-            this.txtOperator.TabIndex = 24;
-            this.txtOperator.TextChanged += new System.EventHandler(this.ClearResult);
+            this.textBoxOperator.Location = new System.Drawing.Point(111, 51);
+            this.textBoxOperator.Name = "textBoxOperator";
+            this.textBoxOperator.Size = new System.Drawing.Size(24, 20);
+            this.textBoxOperator.TabIndex = 24;
+            this.textBoxOperator.TextChanged += new System.EventHandler(this.ClearResult);
             // 
-            // txtOperand1
+            // textBoxOperand1
             // 
-            this.txtOperand1.Location = new System.Drawing.Point(111, 19);
-            this.txtOperand1.Name = "txtOperand1";
-            this.txtOperand1.Size = new System.Drawing.Size(72, 20);
-            this.txtOperand1.TabIndex = 23;
-            this.txtOperand1.TextChanged += new System.EventHandler(this.ClearResult);
+            this.textBoxOperand1.Location = new System.Drawing.Point(111, 19);
+            this.textBoxOperand1.Name = "textBoxOperand1";
+            this.textBoxOperand1.Size = new System.Drawing.Size(72, 20);
+            this.textBoxOperand1.TabIndex = 23;
+            this.textBoxOperand1.TextChanged += new System.EventHandler(this.ClearResult);
             // 
-            // Label3
+            // LabelOperand2
             // 
-            this.Label3.Location = new System.Drawing.Point(23, 83);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(80, 16);
-            this.Label3.TabIndex = 22;
-            this.Label3.Text = "Operand 2:";
-            this.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelOperand2.Location = new System.Drawing.Point(23, 83);
+            this.LabelOperand2.Name = "LabelOperand2";
+            this.LabelOperand2.Size = new System.Drawing.Size(80, 16);
+            this.LabelOperand2.TabIndex = 22;
+            this.LabelOperand2.Text = "Operand 2:";
+            this.LabelOperand2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Label2
+            // LabelOperator
             // 
-            this.Label2.Location = new System.Drawing.Point(23, 51);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(80, 16);
-            this.Label2.TabIndex = 21;
-            this.Label2.Text = "Operator:";
-            this.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelOperator.Location = new System.Drawing.Point(23, 51);
+            this.LabelOperator.Name = "LabelOperator";
+            this.LabelOperator.Size = new System.Drawing.Size(80, 16);
+            this.LabelOperator.TabIndex = 21;
+            this.LabelOperator.Text = "Operator:";
+            this.LabelOperator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Label1
+            // LabelOperand1
             // 
-            this.Label1.Location = new System.Drawing.Point(23, 19);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(80, 16);
-            this.Label1.TabIndex = 20;
-            this.Label1.Text = "Operand 1:";
-            this.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelOperand1.Location = new System.Drawing.Point(23, 19);
+            this.LabelOperand1.Name = "LabelOperand1";
+            this.LabelOperand1.Size = new System.Drawing.Size(80, 16);
+            this.LabelOperand1.TabIndex = 20;
+            this.LabelOperand1.Text = "Operand 1:";
+            this.LabelOperand1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtResult
+            // textBoxResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(111, 115);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.ReadOnly = true;
-            this.txtResult.Size = new System.Drawing.Size(72, 20);
-            this.txtResult.TabIndex = 30;
-            this.txtResult.TabStop = false;
+            this.textBoxResult.Location = new System.Drawing.Point(111, 115);
+            this.textBoxResult.Name = "textBoxResult";
+            this.textBoxResult.ReadOnly = true;
+            this.textBoxResult.Size = new System.Drawing.Size(72, 20);
+            this.textBoxResult.TabIndex = 30;
+            this.textBoxResult.TabStop = false;
             // 
             // Form1
             // 
-            this.AcceptButton = this.btnCalculate;
+            this.AcceptButton = this.buttonCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnExit;
+            this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(227, 186);
-            this.Controls.Add(this.txtResult);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCalculate);
-            this.Controls.Add(this.Label4);
-            this.Controls.Add(this.txtOperand2);
-            this.Controls.Add(this.txtOperator);
-            this.Controls.Add(this.txtOperand1);
-            this.Controls.Add(this.Label3);
-            this.Controls.Add(this.Label2);
-            this.Controls.Add(this.Label1);
+            this.Controls.Add(this.textBoxResult);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonCalculate);
+            this.Controls.Add(this.LabelResult);
+            this.Controls.Add(this.textBoxOperand2);
+            this.Controls.Add(this.textBoxOperator);
+            this.Controls.Add(this.textBoxOperand1);
+            this.Controls.Add(this.LabelOperand2);
+            this.Controls.Add(this.LabelOperator);
+            this.Controls.Add(this.LabelOperand1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Calculator";
@@ -155,16 +155,16 @@ namespace SimpleCalculator
 
         #endregion
 
-        internal System.Windows.Forms.Button btnExit;
-        internal System.Windows.Forms.Button btnCalculate;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.TextBox txtOperand2;
-        internal System.Windows.Forms.TextBox txtOperator;
-        internal System.Windows.Forms.TextBox txtOperand1;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label1;
-        private System.Windows.Forms.TextBox txtResult;
+        internal System.Windows.Forms.Button buttonExit;
+        internal System.Windows.Forms.Button buttonCalculate;
+        internal System.Windows.Forms.Label LabelResult;
+        internal System.Windows.Forms.TextBox textBoxOperand2;
+        internal System.Windows.Forms.TextBox textBoxOperator;
+        internal System.Windows.Forms.TextBox textBoxOperand1;
+        internal System.Windows.Forms.Label LabelOperand2;
+        internal System.Windows.Forms.Label LabelOperator;
+        internal System.Windows.Forms.Label LabelOperand1;
+        private System.Windows.Forms.TextBox textBoxResult;
     }
 }
 
