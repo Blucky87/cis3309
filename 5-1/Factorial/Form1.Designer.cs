@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1 {
+﻿namespace Factorial {
     partial class Form1 {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             this.buttonCalculate.TabIndex = 0;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // buttonExit
             // 
@@ -49,7 +49,7 @@
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.button2_Click);
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // labelNumber
             // 
@@ -94,7 +94,7 @@
             this.Controls.Add(this.labelNumber);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonCalculate);
-            this.Name = "Form1";
+            this.Name = "Factorial";
             this.Text = "Factorial";
             this.ResumeLayout(false);
             this.PerformLayout();

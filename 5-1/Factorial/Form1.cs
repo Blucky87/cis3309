@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1 {
+namespace Factorial {
 
     public partial class Form1 : Form {
 
@@ -14,14 +14,14 @@ namespace WindowsFormsApp1 {
             CancelButton = buttonExit;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void buttonCalculate_Click(object sender, EventArgs e) {
 
             textBoxFactorial.Text = String.Format("{0:N0}", CalculateFactorial(int.Parse(textBoxNumber.Text)));
             textBoxNumber.Text = "";
             textBoxNumber.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void buttonExit_Click(object sender, EventArgs e) {
 
             Close();
         }
@@ -30,7 +30,8 @@ namespace WindowsFormsApp1 {
 
             if (number < 0) {
                 return -1;
-            } if (number == 1 || number == 0) {
+            }
+            if (number == 1 || number == 0) {
                 return 1;
             }
 
