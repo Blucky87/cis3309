@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TaxCalculator
@@ -15,6 +8,11 @@ namespace TaxCalculator
         public Form1()
         {
             InitializeComponent();
+
+            AcceptButton = buttonCalculate;
+            CancelButton = buttonExit;
+
+            textBoxIncome.TextChanged += ClearTax;
         }
 
         private void ButtonExit_Click(object sender, EventArgs e)
@@ -25,8 +23,15 @@ namespace TaxCalculator
         private void ButtonCalculate_Click(object sender, EventArgs e)
         {
             decimal income = Convert.ToDecimal(textBoxIncome.Text);
+            decimal tax = CalculateTax(income);
 
+            textBoxTax.Text = tax.ToString();
+        }
+
+        private decimal CalculateTax(decimal income)
+        {
             decimal tax = 0m;
+
             if (income <= 9225)
                 tax = (int)(income * .10m);
             else if (income > 9225 && income <= 37450)
@@ -42,7 +47,13 @@ namespace TaxCalculator
             else if (income > 413200)
                 tax = 119996.25m + (int)((income - 413200) * .396m);
 
-            textBoxTax.Text = tax.ToString();
+            return tax;
         }
+
+        private void ClearTax(object sender, EventArgs e)
+        {
+            textBoxTax.Text = "";
+        }
+
     }
 }

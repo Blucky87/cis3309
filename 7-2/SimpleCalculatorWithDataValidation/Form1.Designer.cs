@@ -30,7 +30,7 @@ namespace SimpleCalculator
         {
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonCalculate = new System.Windows.Forms.Button();
-            this.labelResult = new System.Windows.Forms.Label();
+            this.LabelResult = new System.Windows.Forms.Label();
             this.textBoxOperand2 = new System.Windows.Forms.TextBox();
             this.textBoxOperator = new System.Windows.Forms.TextBox();
             this.textBoxOperand1 = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@ namespace SimpleCalculator
             this.buttonExit.Size = new System.Drawing.Size(72, 24);
             this.buttonExit.TabIndex = 29;
             this.buttonExit.Text = "E&xit";
-            this.buttonExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonCalculate
             // 
@@ -57,16 +57,16 @@ namespace SimpleCalculator
             this.buttonCalculate.Size = new System.Drawing.Size(80, 24);
             this.buttonCalculate.TabIndex = 28;
             this.buttonCalculate.Text = "&Calculate";
-            this.buttonCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonCalculate_Click);
             // 
-            // labelResult
+            // LabelResult
             // 
-            this.labelResult.Location = new System.Drawing.Point(23, 115);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(80, 16);
-            this.labelResult.TabIndex = 26;
-            this.labelResult.Text = "Result:";
-            this.labelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelResult.Location = new System.Drawing.Point(23, 115);
+            this.LabelResult.Name = "LabelResult";
+            this.LabelResult.Size = new System.Drawing.Size(80, 16);
+            this.LabelResult.TabIndex = 26;
+            this.LabelResult.Text = "Result:";
+            this.LabelResult.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxOperand2
             // 
@@ -138,7 +138,7 @@ namespace SimpleCalculator
             this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonCalculate);
-            this.Controls.Add(this.labelResult);
+            this.Controls.Add(this.LabelResult);
             this.Controls.Add(this.textBoxOperand2);
             this.Controls.Add(this.textBoxOperator);
             this.Controls.Add(this.textBoxOperand1);
@@ -157,7 +157,7 @@ namespace SimpleCalculator
 
         internal System.Windows.Forms.Button buttonExit;
         internal System.Windows.Forms.Button buttonCalculate;
-        internal System.Windows.Forms.Label labelResult;
+        internal System.Windows.Forms.Label LabelResult;
         internal System.Windows.Forms.TextBox textBoxOperand2;
         internal System.Windows.Forms.TextBox textBoxOperator;
         internal System.Windows.Forms.TextBox textBoxOperand1;

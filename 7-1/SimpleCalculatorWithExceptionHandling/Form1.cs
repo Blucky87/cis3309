@@ -1,26 +1,26 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SimpleCalculator
-{
-    public partial class Form1 : Form
-    {
+namespace SimpleCalculator {
+
+    public partial class Form1 : Form {
+
         public Form1()
         {
             InitializeComponent();
+
+            AcceptButton = buttonCalculate;
+            CancelButton = buttonExit;
+
+            textBoxOperand1.TextChanged += ClearResult;
+            textBoxOperand2.TextChanged += ClearResult;
+            textBoxOperator.TextChanged += ClearResult;
         }
 
-        private void btnCalculate_Click(object sender, EventArgs e)
+        private void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            try
-            {
+
+            try {
                 decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
                 string operator1 = textBoxOperator.Text;
                 decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
@@ -29,35 +29,27 @@ namespace SimpleCalculator
                 result = Math.Round(result, 4);
                 this.textBoxResult.Text = result.ToString();
                 textBoxOperand1.Focus();
-            }
-            catch (FormatException)
-            {
+            } catch (FormatException) {
                 MessageBox.Show(
                     "Invalid numeric format. Please check all entries.",
                     "Entry Error");
-            }
-            catch (OverflowException)
-            {
+            } catch (OverflowException) {
                 MessageBox.Show(
                     "Overflow error. Please enter smaller values.",
                     "Entry Error");
-            }
-            catch (DivideByZeroException)
-            {
+            } catch (DivideByZeroException) {
                 MessageBox.Show(
                     "Divide-by-zero error. Please enter a non-zero value for operand 2.",
                     "Entry Error");
-            }
-            catch (Exception ex)
-            {
+                textBoxOperand2.Focus();
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message + "\n\n" +
-                ex.GetType().ToString() + "\n" +
-                ex.StackTrace, "Exception");
+                                ex.GetType().ToString() + "\n" +
+                                ex.StackTrace, "Exception");
             }
         }
 
-        private decimal Calculate(decimal operand1, string operator1,
-            decimal operand2)
+        private decimal Calculate(decimal operand1, string operator1, decimal operand2)
         {
             decimal result = 0;
             if (operator1 == "+")
@@ -71,14 +63,15 @@ namespace SimpleCalculator
             return result;
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ClearResult(object sender, EventArgs e)
         {
-            this.textBoxResult.Text = "";
+            textBoxResult.Text = "";
         }
+
     }
 }

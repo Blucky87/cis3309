@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculatorWithExceptionHandling", "SimpleCalculator\SimpleCalculatorWithExceptionHandling.csproj", "{915C75CB-933F-4C37-961E-2C12FA17F49D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculatorWithExceptionHandling", "SimpleCalculatorWithExceptionHandling\SimpleCalculatorWithExceptionHandling.csproj", "{915C75CB-933F-4C37-961E-2C12FA17F49D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0CD7E032-4A39-475C-A1A3-4AEC0D1D1483}
+		SolutionGuid = {682A2987-FF75-43F1-90F2-51071F33FE0C}
 	EndGlobalSection
 EndGlobal

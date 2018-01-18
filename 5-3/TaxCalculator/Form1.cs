@@ -15,6 +15,9 @@ namespace TaxCalculator
         public Form1()
         {
             InitializeComponent();
+
+            AcceptButton = buttonCalculate;
+            CancelButton = buttonExit;
         }
 
         private void ButtonExit_Click(object sender, EventArgs e)
@@ -42,7 +45,10 @@ namespace TaxCalculator
             else if (income > 413200)
                 tax = 119996.25m + (int)((income - 413200) * .396m);
 
-            labelTax.Text = tax.ToString();
+            textBoxTax.Text = tax.ToString();
+
+            textBoxIncome.Text = "";
+            textBoxIncome.Focus();
         }
 
 

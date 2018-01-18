@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.buttonCalculate = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelAmount = new System.Windows.Forms.Label();
             this.labelQuarters = new System.Windows.Forms.Label();
@@ -37,28 +37,30 @@
             this.textBoxPennies = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // buttonConfirm
+            // buttonCalculate
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(52, 211);
-            this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(75, 23);
-            this.buttonConfirm.TabIndex = 0;
-            this.buttonConfirm.Text = "Calculate";
-            this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Location = new System.Drawing.Point(52, 179);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCalculate.TabIndex = 0;
+            this.buttonCalculate.Text = "Calculate";
+            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.ButtonConfirm_Click);
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(155, 211);
+            this.buttonExit.Location = new System.Drawing.Point(155, 179);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // labelAmount
             // 
             this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(25, 38);
+            this.labelAmount.Location = new System.Drawing.Point(25, 21);
             this.labelAmount.Name = "labelAmount";
             this.labelAmount.Size = new System.Drawing.Size(148, 13);
             this.labelAmount.TabIndex = 2;
@@ -67,7 +69,7 @@
             // labelQuarters
             // 
             this.labelQuarters.AutoSize = true;
-            this.labelQuarters.Location = new System.Drawing.Point(123, 79);
+            this.labelQuarters.Location = new System.Drawing.Point(123, 62);
             this.labelQuarters.Name = "labelQuarters";
             this.labelQuarters.Size = new System.Drawing.Size(50, 13);
             this.labelQuarters.TabIndex = 3;
@@ -76,7 +78,7 @@
             // labelDimes
             // 
             this.labelDimes.AutoSize = true;
-            this.labelDimes.Location = new System.Drawing.Point(134, 105);
+            this.labelDimes.Location = new System.Drawing.Point(134, 88);
             this.labelDimes.Name = "labelDimes";
             this.labelDimes.Size = new System.Drawing.Size(39, 13);
             this.labelDimes.TabIndex = 4;
@@ -85,7 +87,7 @@
             // labelNickels
             // 
             this.labelNickels.AutoSize = true;
-            this.labelNickels.Location = new System.Drawing.Point(128, 131);
+            this.labelNickels.Location = new System.Drawing.Point(128, 114);
             this.labelNickels.Name = "labelNickels";
             this.labelNickels.Size = new System.Drawing.Size(45, 13);
             this.labelNickels.TabIndex = 5;
@@ -94,7 +96,7 @@
             // labelPennies
             // 
             this.labelPennies.AutoSize = true;
-            this.labelPennies.Location = new System.Drawing.Point(125, 160);
+            this.labelPennies.Location = new System.Drawing.Point(125, 143);
             this.labelPennies.Name = "labelPennies";
             this.labelPennies.Size = new System.Drawing.Size(48, 13);
             this.labelPennies.TabIndex = 6;
@@ -102,36 +104,40 @@
             // 
             // textBoxAmount
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(187, 35);
+            this.textBoxAmount.Location = new System.Drawing.Point(187, 18);
             this.textBoxAmount.Name = "textBoxAmount";
             this.textBoxAmount.Size = new System.Drawing.Size(43, 20);
             this.textBoxAmount.TabIndex = 7;
             // 
             // textBoxQuarters
             // 
-            this.textBoxQuarters.Location = new System.Drawing.Point(187, 76);
+            this.textBoxQuarters.Location = new System.Drawing.Point(187, 59);
             this.textBoxQuarters.Name = "textBoxQuarters";
+            this.textBoxQuarters.ReadOnly = true;
             this.textBoxQuarters.Size = new System.Drawing.Size(43, 20);
             this.textBoxQuarters.TabIndex = 8;
             // 
             // textBoxDimes
             // 
-            this.textBoxDimes.Location = new System.Drawing.Point(187, 102);
+            this.textBoxDimes.Location = new System.Drawing.Point(187, 85);
             this.textBoxDimes.Name = "textBoxDimes";
+            this.textBoxDimes.ReadOnly = true;
             this.textBoxDimes.Size = new System.Drawing.Size(43, 20);
             this.textBoxDimes.TabIndex = 9;
             // 
             // textBoxNickels
             // 
-            this.textBoxNickels.Location = new System.Drawing.Point(187, 128);
+            this.textBoxNickels.Location = new System.Drawing.Point(187, 111);
             this.textBoxNickels.Name = "textBoxNickels";
+            this.textBoxNickels.ReadOnly = true;
             this.textBoxNickels.Size = new System.Drawing.Size(43, 20);
             this.textBoxNickels.TabIndex = 10;
             // 
             // textBoxPennies
             // 
-            this.textBoxPennies.Location = new System.Drawing.Point(187, 157);
+            this.textBoxPennies.Location = new System.Drawing.Point(187, 140);
             this.textBoxPennies.Name = "textBoxPennies";
+            this.textBoxPennies.ReadOnly = true;
             this.textBoxPennies.Size = new System.Drawing.Size(43, 20);
             this.textBoxPennies.TabIndex = 11;
             // 
@@ -139,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 247);
+            this.ClientSize = new System.Drawing.Size(242, 214);
             this.Controls.Add(this.textBoxPennies);
             this.Controls.Add(this.textBoxNickels);
             this.Controls.Add(this.textBoxDimes);
@@ -151,9 +157,9 @@
             this.Controls.Add(this.labelQuarters);
             this.Controls.Add(this.labelAmount);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonConfirm);
+            this.Controls.Add(this.buttonCalculate);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Change Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +167,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelAmount;
         private System.Windows.Forms.Label labelQuarters;
