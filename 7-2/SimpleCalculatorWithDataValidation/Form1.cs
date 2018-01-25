@@ -1,6 +1,4 @@
 using System;
-using System.CodeDom;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SimpleCalculator {
@@ -23,27 +21,41 @@ namespace SimpleCalculator {
         {
 
             try {
-                List<TextBox> textBoxList = new List<TextBox>();
-                textBoxList.Add(textBoxOperand1);
-                textBoxList.Add(textBoxOperand2);
-                textBoxList.Add(textBoxOperator);
-                
-                textBoxList.ForEach(IsOperator);
-                textBoxList.ForEach(IsPresent);
 
-                decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
-                string operator1 = textBoxOperator.Text;
-                decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
-                decimal result = Calculate(operand1, operator1, operand2);
+                bool isValid = isValidData();
+                if (isValid)
+                {
+                    decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
+                    string operator1 = textBoxOperator.Text;
+                    decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
 
-                result = Math.Round(result, 4);
-                this.textBoxResult.Text = result.ToString();
-                textBoxOperand1.Focus();
+                    decimal result = Calculate(operand1, operator1, operand2);
+                    result = Math.Round(result, 4);
+                    textBoxResult.Text = result.ToString();
+                    textBoxOperand1.Focus();
+                }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message + "\n\n" +
                                 ex.GetType().ToString() + "\n" +
                                 ex.StackTrace, "Exception");
             }
+        }
+
+        private bool isValidData()
+        {
+
+            if (IsOperator(textBoxOperator, "Operator") && IsPresent(textBoxOperator, "Operator")
+                                                        && IsPresent(textBoxOperand1, "Operand 1") 
+                                                        && IsDecimal(textBoxOperand1, "Operand 1")
+                                                        && isWithinRange(textBoxOperand1, "Operand 1", 0, 1000000)
+                                                        && IsPresent(textBoxOperand2, "Operand 2")
+                                                        && IsDecimal(textBoxOperand2, "Operand 2")
+                                                        && isWithinRange(textBoxOperand2, "Operand 2", 0, 1000000))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private decimal Calculate(decimal operand1, string operator1, decimal operand2)
@@ -70,28 +82,58 @@ namespace SimpleCalculator {
             textBoxResult.Text = "";
         }
 
-        private void IsOperator(TextBox textBox)
+        private bool IsOperator(TextBox textBox, string name)
         {
-            if (!textBox.Text.Equals("+")
-                || !textBox.Text.Equals("-")
-                || !textBox.Text.Equals("*")
-                || !textBox.Text.Equals("/"))
+            if (!(textBox.Text.Equals("+")
+                || textBox.Text.Equals("-")
+                || textBox.Text.Equals("*")
+                || textBox.Text.Equals("/")))
             {
-                throw new 
+                MessageBox.Show("Symbol for " + name + " is invalid.", "Entry Error");
+                return false;
             }
+
+            return true;
         }
 
-        private void IsPresent(TextBox textBox)
+        private bool isWithinRange(TextBox textBox, string name, decimal min, decimal max)
+        {
+            decimal number = Convert.ToDecimal(textBox.Text);
+
+            if (number < min || number > max)
+            {
+                MessageBox.Show(name + " must be between " + min.ToString() + " and " + max.ToString() + ".",
+                    "Entry Error");
+                textBox.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        private bool IsPresent(TextBox textBox, string name)
         {
             if (textBox.Text.Equals(""))
             {
-                throw new FormatException("TextBox is Empty");
+                MessageBox.Show(name + " is a required field.", "Entry Error");
+                textBox.Focus();
+                return false;
             }
+
+            return true;
         }
 
-        private void IsDecimal(TextBox textBox)
+        private bool IsDecimal(TextBox textBox, string name)
         {
+            decimal number = 0m;
+            if (Decimal.TryParse(textBox.Text, out number))
+            {
+                return true;
+            }
 
+            MessageBox.Show(name + " must be a decimal value.", "Entry Error");
+            textBox.Focus();
+
+            return false;
         }
 
 

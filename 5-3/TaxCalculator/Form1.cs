@@ -22,12 +22,12 @@ namespace TaxCalculator
 
         private void ButtonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            decimal income = Convert.ToDecimal(textBoxIncome.Text);
+            decimal income = decimal.Parse(textBoxIncome.Text);
 
             decimal tax = 0m;
             if (income <= 9225)

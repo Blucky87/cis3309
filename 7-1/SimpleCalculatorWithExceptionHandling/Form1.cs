@@ -27,7 +27,7 @@ namespace SimpleCalculator {
                 decimal result = Calculate(operand1, operator1, operand2);
 
                 result = Math.Round(result, 4);
-                this.textBoxResult.Text = result.ToString();
+                textBoxResult.Text = result.ToString();
                 textBoxOperand1.Focus();
             } catch (FormatException) {
                 MessageBox.Show(

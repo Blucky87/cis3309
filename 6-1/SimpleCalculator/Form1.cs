@@ -19,9 +19,10 @@ namespace SimpleCalculator {
 
         private void ButtonCalculate_Click(object sender, EventArgs e)
         {
-            decimal operand1 = Convert.ToDecimal(textBoxOperand1.Text);
+            decimal operand1 = decimal.Parse(textBoxOperand1.Text);
             string operator1 = textBoxOperator.Text;
-            decimal operand2 = Convert.ToDecimal(textBoxOperand2.Text);
+
+            decimal operand2 = decimal.Parse(textBoxOperand2.Text);
             decimal result = Calculate(operand1, operator1, operand2);
 
             result = Math.Round(result, 4);

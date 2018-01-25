@@ -13,9 +13,11 @@ namespace Factorial {
             CancelButton = buttonExit;
         }
 
-        private void buttonCalculate_Click(object sender, EventArgs e) {
+        private void buttonCalculate_Click(object sender, EventArgs e)
+        {
 
-            textBoxFactorial.Text = String.Format("{0:N0}", CalculateFactorial(int.Parse(textBoxNumber.Text)));
+            Int64 factorial = CalculateFactorial(int.Parse(textBoxNumber.Text));
+            textBoxFactorial.Text = String.Format("{0:N0}",factorial);
             textBoxNumber.Text = "";
             textBoxNumber.Focus();
         }
@@ -25,7 +27,7 @@ namespace Factorial {
             Close();
         }
 
-        private Int64 CalculateFactorial(Int64 number) {
+        private Int64 CalculateFactorial(int number) {
 
             if (number < 0) {
                 return -1;
