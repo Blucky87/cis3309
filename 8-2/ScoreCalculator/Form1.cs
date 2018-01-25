@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,17 +7,13 @@ namespace ScoreCalculator
 {
     public partial class Form1 : Form
     {
-        private int[] scoreArray;
-        private int scoreCount;
-        private int scoreTotal;
+        private List<int> scoreList;
 
         public Form1()
         {
             InitializeComponent();
-
-            scoreArray = new int[50];
-            scoreTotal = 0;
-            scoreCount = 0;
+            
+            scoreList = new List<int>();
 
             AcceptButton = buttonAdd;
             CancelButton = buttonExit;
@@ -32,9 +29,7 @@ namespace ScoreCalculator
 
                 if (validScore)
                 {
-                    scoreArray[scoreCount] = score;
-                    scoreCount += 1;
-                    scoreTotal += score;
+                    scoreList.Add(score);
                 }
                 else
                 {
@@ -51,22 +46,23 @@ namespace ScoreCalculator
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            scoreArray = new int[50];
-            scoreTotal = 0;
-            scoreCount = 0;
+            scoreList = new List<int>();
 
             UpdateTextBoxes();
         }
 
         private void UpdateTextBoxes()
         {
+            int scoreCount = scoreList.Count;
+            int scoreTotal = scoreList.Aggregate(0, (cScore, nScore) => cScore + nScore);
+            double scoreAverage = scoreCount != 0 ? scoreList.Average() : 0;
+
             textboxScore.Text = "";
             textboxScore.Focus();
 
-            textboxTotal.Text = scoreTotal.ToString();
+            textboxAverage.Text = scoreAverage.ToString();
             textboxCount.Text = scoreCount.ToString();
-
-            textboxAverage.Text = scoreCount != 0 ? (scoreTotal / scoreCount).ToString() : "0";
+            textboxTotal.Text = scoreTotal.ToString();
         }
 
 
@@ -82,11 +78,9 @@ namespace ScoreCalculator
 
         private void buttonDisplayScores_Click(object sender, EventArgs e)
         {
-            string scoreString = scoreArray.Take(scoreCount)
-                .OrderBy(score => score)
+            string scoreString = scoreList.OrderBy(score => score)
                 .Aggregate("", (cScore, nScore) => cScore + (nScore.ToString() + "\n"));
                 
-
             MessageBox.Show(scoreString, "Sorted Scores");
             textboxScore.Focus();
         }
