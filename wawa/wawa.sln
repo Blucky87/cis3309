@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wawa", "wawa\wawa.csproj", "{7DD1FBFD-9D37-4AA4-936C-4CA73A7765C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wawa_api", "wawa_api\wawa_api.csproj", "{4C5923C3-D221-4541-8420-A2F37CB04EF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7DD1FBFD-9D37-4AA4-936C-4CA73A7765C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DD1FBFD-9D37-4AA4-936C-4CA73A7765C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DD1FBFD-9D37-4AA4-936C-4CA73A7765C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DD1FBFD-9D37-4AA4-936C-4CA73A7765C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5923C3-D221-4541-8420-A2F37CB04EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5923C3-D221-4541-8420-A2F37CB04EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5923C3-D221-4541-8420-A2F37CB04EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5923C3-D221-4541-8420-A2F37CB04EF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
