@@ -129,6 +129,9 @@ namespace section2
             if(listBoxStudents.SelectedIndex != -1)
                 //remove the student at the selected index
                 studentList.RemoveAt(listBoxStudents.SelectedIndex);
+
+            if (studentList.Count == 0)
+                clearScoreStats();
         }
     }
 }
