@@ -28,7 +28,7 @@ namespace matrix
             matrixB = new Matrix(0, 0);
             matrixC = new Matrix(0, 0);
 
-            //collect all the text boxes that must have integers in them checked with a listener on Leave
+            //collect all the text boxes that must have integers in them; to have checked with a listener on Leave
             List<TextBox> mustBeIntegers = new List<TextBox>();
             mustBeIntegers.Add(textBoxMatrixARows);
             mustBeIntegers.Add(textBoxMatrixAColumns);
@@ -203,5 +203,13 @@ namespace matrix
             textBoxMatrixBDisplay.Text = String.Empty;
             textBoxMatrixCDisplay.Text = String.Empty;
         }
+
+        //event for exit button click
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            //close the form
+            Close();
+        }
+
     }
 }

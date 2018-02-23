@@ -3,7 +3,6 @@ using System.Text;
 
 namespace matrix
 {
-
     //class for handling matrix information and to perform calculations
     class Matrix
     {
@@ -184,8 +183,14 @@ namespace matrix
                 {
                     //create a string holding the element of the matrix
                     string element = String.Format("{0:f1}",Element[i, j]);
-                    //add the element string to the string builder
-                    toString.Append(element + "\t");
+                    string mod = String.Empty;
+
+                    //better formatting for last column in the matrix row
+                    if (j != NumberOfColumns - 1)
+                        mod = "\t";
+ 
+                    //add the element string with modifier to the string builder
+                    toString.Append(element + mod);
                 }
 
                 //add a newline to the stringbuilder for a new row in the matrix

@@ -59,35 +59,35 @@ namespace matrix
             // 
             // buttonMatrixAGenerate
             // 
-            this.buttonMatrixAGenerate.Location = new System.Drawing.Point(9, 227);
+            this.buttonMatrixAGenerate.Location = new System.Drawing.Point(11, 207);
             this.buttonMatrixAGenerate.Name = "buttonMatrixAGenerate";
             this.buttonMatrixAGenerate.Size = new System.Drawing.Size(127, 23);
-            this.buttonMatrixAGenerate.TabIndex = 0;
+            this.buttonMatrixAGenerate.TabIndex = 2;
             this.buttonMatrixAGenerate.Text = "Make Matrix A";
             this.buttonMatrixAGenerate.UseVisualStyleBackColor = true;
             this.buttonMatrixAGenerate.Click += new System.EventHandler(this.buttonMatrixAGenerate_Click);
             // 
             // buttonMatrixBGenerate
             // 
-            this.buttonMatrixBGenerate.Location = new System.Drawing.Point(9, 256);
+            this.buttonMatrixBGenerate.Location = new System.Drawing.Point(11, 236);
             this.buttonMatrixBGenerate.Name = "buttonMatrixBGenerate";
             this.buttonMatrixBGenerate.Size = new System.Drawing.Size(127, 23);
-            this.buttonMatrixBGenerate.TabIndex = 1;
+            this.buttonMatrixBGenerate.TabIndex = 5;
             this.buttonMatrixBGenerate.Text = "Make Matrix B";
             this.buttonMatrixBGenerate.UseVisualStyleBackColor = true;
             this.buttonMatrixBGenerate.Click += new System.EventHandler(this.buttonMatrixBGenerate_Click);
             // 
             // textBoxMatrixARows
             // 
-            this.textBoxMatrixARows.Location = new System.Drawing.Point(142, 229);
+            this.textBoxMatrixARows.Location = new System.Drawing.Point(144, 209);
             this.textBoxMatrixARows.Name = "textBoxMatrixARows";
             this.textBoxMatrixARows.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMatrixARows.TabIndex = 2;
+            this.textBoxMatrixARows.TabIndex = 0;
             this.textBoxMatrixARows.Text = "3";
             // 
             // textBoxMatrixBRows
             // 
-            this.textBoxMatrixBRows.Location = new System.Drawing.Point(142, 259);
+            this.textBoxMatrixBRows.Location = new System.Drawing.Point(144, 239);
             this.textBoxMatrixBRows.Name = "textBoxMatrixBRows";
             this.textBoxMatrixBRows.Size = new System.Drawing.Size(100, 20);
             this.textBoxMatrixBRows.TabIndex = 3;
@@ -95,18 +95,18 @@ namespace matrix
             // 
             // textBoxMatrixAColumns
             // 
-            this.textBoxMatrixAColumns.Location = new System.Drawing.Point(248, 230);
+            this.textBoxMatrixAColumns.Location = new System.Drawing.Point(250, 210);
             this.textBoxMatrixAColumns.Name = "textBoxMatrixAColumns";
             this.textBoxMatrixAColumns.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMatrixAColumns.TabIndex = 4;
+            this.textBoxMatrixAColumns.TabIndex = 1;
             this.textBoxMatrixAColumns.Text = "3";
             // 
             // textBoxMatrixBColumns
             // 
-            this.textBoxMatrixBColumns.Location = new System.Drawing.Point(248, 258);
+            this.textBoxMatrixBColumns.Location = new System.Drawing.Point(250, 238);
             this.textBoxMatrixBColumns.Name = "textBoxMatrixBColumns";
             this.textBoxMatrixBColumns.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMatrixBColumns.TabIndex = 5;
+            this.textBoxMatrixBColumns.TabIndex = 4;
             this.textBoxMatrixBColumns.Text = "3";
             // 
             // textBoxMatrixADisplay
@@ -116,8 +116,8 @@ namespace matrix
             this.textBoxMatrixADisplay.Name = "textBoxMatrixADisplay";
             this.textBoxMatrixADisplay.ReadOnly = true;
             this.textBoxMatrixADisplay.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxMatrixADisplay.Size = new System.Drawing.Size(175, 175);
-            this.textBoxMatrixADisplay.TabIndex = 6;
+            this.textBoxMatrixADisplay.Size = new System.Drawing.Size(150, 150);
+            this.textBoxMatrixADisplay.TabIndex = 12;
             this.textBoxMatrixADisplay.WordWrap = false;
             // 
             // textBoxMatrixBDisplay
@@ -127,8 +127,8 @@ namespace matrix
             this.textBoxMatrixBDisplay.Name = "textBoxMatrixBDisplay";
             this.textBoxMatrixBDisplay.ReadOnly = true;
             this.textBoxMatrixBDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxMatrixBDisplay.Size = new System.Drawing.Size(175, 175);
-            this.textBoxMatrixBDisplay.TabIndex = 7;
+            this.textBoxMatrixBDisplay.Size = new System.Drawing.Size(150, 150);
+            this.textBoxMatrixBDisplay.TabIndex = 13;
             this.textBoxMatrixBDisplay.WordWrap = false;
             // 
             // textBoxMatrixCDisplay
@@ -138,8 +138,8 @@ namespace matrix
             this.textBoxMatrixCDisplay.Name = "textBoxMatrixCDisplay";
             this.textBoxMatrixCDisplay.ReadOnly = true;
             this.textBoxMatrixCDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxMatrixCDisplay.Size = new System.Drawing.Size(175, 175);
-            this.textBoxMatrixCDisplay.TabIndex = 8;
+            this.textBoxMatrixCDisplay.Size = new System.Drawing.Size(150, 150);
+            this.textBoxMatrixCDisplay.TabIndex = 14;
             this.textBoxMatrixCDisplay.WordWrap = false;
             // 
             // radioButtonMultiply
@@ -149,7 +149,7 @@ namespace matrix
             this.radioButtonMultiply.Location = new System.Drawing.Point(19, 19);
             this.radioButtonMultiply.Name = "radioButtonMultiply";
             this.radioButtonMultiply.Size = new System.Drawing.Size(60, 17);
-            this.radioButtonMultiply.TabIndex = 9;
+            this.radioButtonMultiply.TabIndex = 7;
             this.radioButtonMultiply.TabStop = true;
             this.radioButtonMultiply.Text = "Multiply";
             this.radioButtonMultiply.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@ namespace matrix
             this.radioButtonAddition.Location = new System.Drawing.Point(85, 19);
             this.radioButtonAddition.Name = "radioButtonAddition";
             this.radioButtonAddition.Size = new System.Drawing.Size(44, 17);
-            this.radioButtonAddition.TabIndex = 10;
+            this.radioButtonAddition.TabIndex = 8;
             this.radioButtonAddition.TabStop = true;
             this.radioButtonAddition.Text = "Add";
             this.radioButtonAddition.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@ namespace matrix
             this.radioButtonSubtraction.Location = new System.Drawing.Point(135, 19);
             this.radioButtonSubtraction.Name = "radioButtonSubtraction";
             this.radioButtonSubtraction.Size = new System.Drawing.Size(65, 17);
-            this.radioButtonSubtraction.TabIndex = 11;
+            this.radioButtonSubtraction.TabIndex = 9;
             this.radioButtonSubtraction.TabStop = true;
             this.radioButtonSubtraction.Text = "Subtract";
             this.radioButtonSubtraction.UseVisualStyleBackColor = true;
@@ -181,49 +181,51 @@ namespace matrix
             // 
             // buttonCalculate
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(9, 343);
+            this.buttonCalculate.Location = new System.Drawing.Point(11, 323);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(85, 23);
-            this.buttonCalculate.TabIndex = 12;
+            this.buttonCalculate.TabIndex = 10;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // buttonMatrixBIdentity
             // 
-            this.buttonMatrixBIdentity.Location = new System.Drawing.Point(354, 257);
+            this.buttonMatrixBIdentity.Location = new System.Drawing.Point(356, 237);
             this.buttonMatrixBIdentity.Name = "buttonMatrixBIdentity";
             this.buttonMatrixBIdentity.Size = new System.Drawing.Size(97, 23);
-            this.buttonMatrixBIdentity.TabIndex = 13;
+            this.buttonMatrixBIdentity.TabIndex = 6;
             this.buttonMatrixBIdentity.Text = "Make B Identity";
             this.buttonMatrixBIdentity.UseVisualStyleBackColor = true;
             this.buttonMatrixBIdentity.Click += new System.EventHandler(this.buttonMatrixBIdentity_Click);
             // 
             // buttonMatrixAllClear
             // 
-            this.buttonMatrixAllClear.Location = new System.Drawing.Point(363, 343);
+            this.buttonMatrixAllClear.Location = new System.Drawing.Point(338, 323);
             this.buttonMatrixAllClear.Name = "buttonMatrixAllClear";
             this.buttonMatrixAllClear.Size = new System.Drawing.Size(104, 23);
-            this.buttonMatrixAllClear.TabIndex = 14;
+            this.buttonMatrixAllClear.TabIndex = 11;
             this.buttonMatrixAllClear.Text = "Clear Matrices";
             this.buttonMatrixAllClear.UseVisualStyleBackColor = true;
             this.buttonMatrixAllClear.Click += new System.EventHandler(this.buttonMatrixAllClear_Click);
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(473, 343);
+            this.buttonExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonExit.Location = new System.Drawing.Point(448, 323);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 15;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBoxOperations
             // 
             this.groupBoxOperations.Controls.Add(this.radioButtonAddition);
             this.groupBoxOperations.Controls.Add(this.radioButtonSubtraction);
             this.groupBoxOperations.Controls.Add(this.radioButtonMultiply);
-            this.groupBoxOperations.Location = new System.Drawing.Point(9, 285);
+            this.groupBoxOperations.Location = new System.Drawing.Point(12, 265);
             this.groupBoxOperations.Name = "groupBoxOperations";
             this.groupBoxOperations.Size = new System.Drawing.Size(211, 52);
             this.groupBoxOperations.TabIndex = 16;
@@ -233,7 +235,7 @@ namespace matrix
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 213);
+            this.label1.Location = new System.Drawing.Point(177, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 17;
@@ -242,7 +244,7 @@ namespace matrix
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(270, 213);
+            this.label2.Location = new System.Drawing.Point(272, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 18;
@@ -281,7 +283,7 @@ namespace matrix
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonExit;
-            this.ClientSize = new System.Drawing.Size(556, 373);
+            this.ClientSize = new System.Drawing.Size(534, 355);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -307,8 +309,6 @@ namespace matrix
             this.groupBoxOperations.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-
 
         }
 
