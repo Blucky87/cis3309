@@ -99,5 +99,10 @@ namespace section2
             //remove all elements from the scorelist
             scoreList.Clear();
         }
+
+        private void listBoxScores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

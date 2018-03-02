@@ -138,6 +138,8 @@ namespace section2
 
             if (studentList.Count == 0)
                 clearScoreStats();
+
+            listBoxStudents_SelectedIndexChanged(sender, e);
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
