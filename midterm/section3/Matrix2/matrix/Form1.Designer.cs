@@ -54,6 +54,8 @@ namespace matrix
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonClone = new System.Windows.Forms.Button();
+            this.radioButtonABeq = new System.Windows.Forms.RadioButton();
             this.groupBoxOperations.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,7 +195,7 @@ namespace matrix
             // 
             this.buttonMatrixBIdentity.Location = new System.Drawing.Point(356, 237);
             this.buttonMatrixBIdentity.Name = "buttonMatrixBIdentity";
-            this.buttonMatrixBIdentity.Size = new System.Drawing.Size(97, 23);
+            this.buttonMatrixBIdentity.Size = new System.Drawing.Size(111, 23);
             this.buttonMatrixBIdentity.TabIndex = 6;
             this.buttonMatrixBIdentity.Text = "Make B Identity";
             this.buttonMatrixBIdentity.UseVisualStyleBackColor = true;
@@ -222,12 +224,13 @@ namespace matrix
             // 
             // groupBoxOperations
             // 
+            this.groupBoxOperations.Controls.Add(this.radioButtonABeq);
             this.groupBoxOperations.Controls.Add(this.radioButtonAddition);
             this.groupBoxOperations.Controls.Add(this.radioButtonSubtraction);
             this.groupBoxOperations.Controls.Add(this.radioButtonMultiply);
             this.groupBoxOperations.Location = new System.Drawing.Point(12, 265);
             this.groupBoxOperations.Name = "groupBoxOperations";
-            this.groupBoxOperations.Size = new System.Drawing.Size(211, 52);
+            this.groupBoxOperations.Size = new System.Drawing.Size(275, 52);
             this.groupBoxOperations.TabIndex = 16;
             this.groupBoxOperations.TabStop = false;
             this.groupBoxOperations.Text = "Select Operation";
@@ -277,6 +280,28 @@ namespace matrix
             this.label5.TabIndex = 21;
             this.label5.Text = "Matrix C";
             // 
+            // button1
+            // 
+            this.buttonClone.Location = new System.Drawing.Point(356, 208);
+            this.buttonClone.Name = "buttonClone";
+            this.buttonClone.Size = new System.Drawing.Size(111, 23);
+            this.buttonClone.TabIndex = 22;
+            this.buttonClone.Text = "Make B Copy of A";
+            this.buttonClone.UseVisualStyleBackColor = true;
+            this.buttonClone.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // rbnABEq
+            // 
+            this.radioButtonABeq.AutoSize = true;
+            this.radioButtonABeq.Location = new System.Drawing.Point(204, 19);
+            this.radioButtonABeq.Name = "radioButtonABeq";
+            this.radioButtonABeq.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonABeq.TabIndex = 10;
+            this.radioButtonABeq.TabStop = true;
+            this.radioButtonABeq.Text = "A == B";
+            this.radioButtonABeq.UseVisualStyleBackColor = true;
+            this.radioButtonABeq.CheckedChanged += new System.EventHandler(this.radioButtonABeq_CheckedChanged);
+            // 
             // Form1
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -284,6 +309,7 @@ namespace matrix
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonExit;
             this.ClientSize = new System.Drawing.Size(534, 355);
+            this.Controls.Add(this.buttonClone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -336,6 +362,8 @@ namespace matrix
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private RadioButton radioButtonABeq;
+        private Button buttonClone;
     }
 }
 

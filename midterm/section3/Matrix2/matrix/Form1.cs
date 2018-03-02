@@ -9,7 +9,7 @@ namespace matrix
         //Operation enumeration to store radio button state
         enum Operation
         {
-            Multiplication, Addition, Subtraction
+            Multiplication, Addition, Subtraction, ABeq
         }
 
         //the 3 matrices
@@ -24,9 +24,9 @@ namespace matrix
             operation = Operation.Multiplication;
 
             //setup the matrices
-            matrixA = new Matrix(0,0);
-            matrixB = new Matrix(0, 0);
-            matrixC = new Matrix(0, 0);
+            matrixA = null;
+            matrixB = null;
+            matrixC = null;
 
             //collect all the text boxes that must have integers in them; to have checked with a listener on Leave
             List<TextBox> mustBeIntegers = new List<TextBox>();
@@ -71,6 +71,11 @@ namespace matrix
             //set operation as subtraction
             operation = Operation.Subtraction;
         }
+
+        private void radioButtonABeq_CheckedChanged(object sender, EventArgs e)
+        {
+            operation = Operation.ABeq;
+        }
         #endregion
 
         //event when you click the calculate button
@@ -84,26 +89,30 @@ namespace matrix
                 {
                     //perform multiplication
                     case Operation.Multiplication:
-                        matrixC = matrixA.Multiply(matrixB);
+                        matrixC = matrixA * matrixB;
+                        textBoxMatrixCDisplay.Text = matrixC.ToString();
                         break;
                     //perform addition
                     case Operation.Addition:
-                        matrixC = matrixA.Addition(matrixB);
+                        matrixC = matrixA + matrixB;
+                        textBoxMatrixCDisplay.Text = matrixC.ToString();
                         break;
                     //perform subtraction
                     case Operation.Subtraction:
-                        matrixC = matrixA.Subtraction(matrixB);
+                        matrixC = matrixA - matrixB;
+                        textBoxMatrixCDisplay.Text = matrixC.ToString();
+                        break;
+                    case Operation.ABeq:
+                        textBoxMatrixCDisplay.Text = matrixA == matrixB ? "A is equal to B" : "A is not equal to B";
                         break;
                     //? should not hit
                     default:
                         matrixC = new Matrix(0, 0);
                         break;
                 }
-                //update the matrix textbox display for matrix C
-                textBoxMatrixCDisplay.Text = matrixC.ToString();
             }
             //catch if the math operation threw an exception
-            catch (InvalidOperationException err)
+            catch (Exception err)
             {
                 //clear the matrix C textbox
                 textBoxMatrixCDisplay.Text = String.Empty;
@@ -118,13 +127,20 @@ namespace matrix
             //try to convert the matric into an Identity
             try
             {
-                //try to trun matrix B into an Identity matrix
-                matrixB.MakeIdentity();
-                //update the matrix B disaply textbox
-                textBoxMatrixBDisplay.Text = matrixB.ToString();
+                if (matrixB != null)
+                {
+                    //try to trun matrix B into an Identity matrix
+                    matrixB.makeId();
+                    //update the matrix B disaply textbox
+                    textBoxMatrixBDisplay.Text = matrixB.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Matrix B is null");
+                }
             }
             //catch an exception thrown by turning the matrix into an idenity
-            catch (InvalidOperationException err)
+            catch (Exception err)
             {
                 //display the exception
                 MessageBox.Show(err.Message, "Warning");
@@ -147,7 +163,7 @@ namespace matrix
                 textBoxMatrixADisplay.Text = matrixA.ToString();
             }
             //catch exception thrown from making matrix
-            catch (InvalidOperationException err)
+            catch (Exception err)
             {
                 //display exception
                 MessageBox.Show(err.Message, "Warning");
@@ -170,7 +186,7 @@ namespace matrix
                 textBoxMatrixBDisplay.Text = matrixB.ToString();
             }
             //catch exception thrown from creating matrix
-            catch (InvalidOperationException err)
+            catch (Exception err)
             {
                 //display exception
                 MessageBox.Show(err.Message, "Warning");
@@ -190,9 +206,22 @@ namespace matrix
         private void ClearMatrix()
         {
             //set all the matrices to new empties
-            matrixA = new Matrix(0, 0);
-            matrixB = new Matrix(0, 0);
-            matrixC = new Matrix(0, 0);
+            matrixA = null;
+            matrixB = null;
+            matrixC = null;
+        }
+
+        private void buttonClone_Click(object sender, EventArgs e)
+        {
+            if (matrixA == null)
+            {
+                MessageBox.Show("Matrix A is null");
+                return;
+            }
+
+            matrixB = new Matrix(matrixA.Rows, matrixA.Cols);
+            matrixB.clone(matrixA);
+            textBoxMatrixBDisplay.Text = matrixB.ToString();
         }
 
         //clears the matrix display textboxes

@@ -1,25 +1,27 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace matrix
 {
     //class for handling matrix information and to perform calculations
+    //IEquatable interface for typesafe equality check
     class Matrix
     {
         //the 2 dimentional array behind the matrix storage
-        public double[,] Element { get; set; }
+        public double[,] matrix { get; set; }
 
         //wrappers for getting matrix info
-        public int NumberOfRows => Element.GetLength(0);
-        public int NumberOfColumns => Element.GetLength(1);
+        public int Rows => matrix.GetLength(0);
+        public int Cols => matrix.GetLength(1);
 
         //constructor for ints
         public Matrix(int rows, int columns)
         {
             //create the 2d array
-            Element = new double[rows, columns];
+            matrix = new double[rows, columns];
             //fill matrix with random numbers
-            populate();
+            populateRand();
         }
 
         //constructor for strings
@@ -38,166 +40,321 @@ namespace matrix
             if (!isValidIntegers) throw new InvalidOperationException("Please enter an integer");
 
             //create the 2d array
-            Element = new double[intRows, intColumns];
+            matrix = new double[intRows, intColumns];
             //fill matrix with random numbers
-            populate();
+            populateRand();
         }
 
 
-        public void populate()
+        public void populateRand()
         {
             //create random object
             Random rand = new Random();
 
             //loop through the matrix 
-            for (int i = 0; i < NumberOfRows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < NumberOfColumns; j++)
+                for (int j = 0; j < Cols; j++)
                 {
                     //set the element in the matrix as a random double between 0 and 10
-                    Element[i, j] = rand.NextDouble() * 10.0;
+                    this[i, j] = rand.NextDouble() * 10.0;
+                }
+            }
+        }
+
+        public void populateOrd()
+        {
+            double number = 0.0;
+
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    this[i, j] = number += 1.0;
                 }
             }
         }
 
         //converts the matrix into an identity of the same size
-        public void MakeIdentity()
+        public void makeId()
         {
             //throw exception if matrix is not a square
-            if (NumberOfRows != NumberOfColumns)
-                throw new InvalidOperationException("Rows and Cols of matrix must be equal");
+            if (Rows != Cols)
+                throw new Exception("Rows and Cols of matrix must be equal");
 
             //loop through the matrix
-            for (int i = 0; i < NumberOfRows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < NumberOfColumns; j++)
+                for (int j = 0; j < Cols; j++)
                 {
                     //if the element is diagonal from the top left make it 1
                     if (i == j)
-                        Element[i, j] = 1.0;
+                        matrix[i, j] = 1.0;
                     else
-                        Element[i, j] = 0.0;
+                        matrix[i, j] = 0.0;
                 }
             }
         }
 
         //adds the matrix to the one passed in and returns the answer as a new matrix 
-        public Matrix Addition(Matrix matrix)
+        public Matrix Addition(Matrix otherMatrix)
         {
-            //throw exception if matrix is not initialized or nonexistant
-            if (NumberOfRows == 0 || NumberOfColumns == 0 || matrix == null || matrix.NumberOfRows == 0 || matrix.NumberOfColumns == 0)
-                throw new InvalidOperationException("Please initialize A and B matrix");
 
-            //throw exception if the matrices are incompatible dimensions for the operation
-            if (NumberOfRows != matrix.NumberOfRows || NumberOfColumns != matrix.NumberOfColumns)
-                throw new InvalidOperationException("Please check dimensions of A and B matrices");
+            if (object.Equals(otherMatrix, null))
+                throw new Exception("Matrix is null");
+            if (!dimsEqual(otherMatrix))
+                throw new Exception("Dimensions don't match");
 
-            //create a new matrix to hold the result of the operation
-            Matrix newMatrix = new Matrix(NumberOfRows, NumberOfColumns);
+            Matrix newMatrix = new Matrix(Rows, Cols);
 
-            //loop through the matrix
-            for (int i = 0; i < NumberOfRows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < NumberOfColumns; j++)
+                for (int j = 0; j < Cols; j++)
                 {
-                    //perform the addition operation on the 2 matrices and store the answer in the new matrix
-                    newMatrix.Element[i, j] = Element[i, j] + matrix.Element[i, j];
+                    newMatrix[i, j] = this[i, j] + otherMatrix[i, j];
                 }
             }
 
-            //return the new matrix holding the answer
             return newMatrix;
         }
 
         //perform the subtraction operation on the matrix passed in
-        public Matrix Subtraction(Matrix matrix)
+        public Matrix Subtraction(Matrix otherMatrix)
         {
-            //throw exception if either matrix is invalid or non existant
-            if(NumberOfRows == 0 || NumberOfColumns == 0 || matrix == null || matrix.NumberOfRows == 0 || matrix.NumberOfColumns == 0)
-                throw new InvalidOperationException("Please initialize A and B matrix");
+            if (object.Equals(otherMatrix, null))
+                throw new Exception("Matrix is null");
+            if (!dimsEqual(otherMatrix))
+                throw new Exception("Dimensions don't match");
 
-            //throw an exception if the 2 matrices are incompatible to have the operation performed
-            if (NumberOfRows != matrix.NumberOfRows || NumberOfColumns != matrix.NumberOfColumns)
-                throw new InvalidOperationException("Please check dimensions of A and B matrices");
+            Matrix newMatrix = new Matrix(Rows, Cols);
 
-            //create new matrix to store answers
-            Matrix newMatrix = new Matrix(NumberOfRows, NumberOfColumns);
-
-            //loop through matrix
-            for (int i = 0; i < NumberOfRows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < NumberOfColumns; j++)
+                for (int j = 0; j < Cols; j++)
                 {
-                    //perform operation and store answer in new matrix
-                    newMatrix.Element[i, j] = Element[i, j] - matrix.Element[i, j];
+                    newMatrix[i, j] = this[i, j] - otherMatrix[i, j];
                 }
             }
 
-            //return new matrix holding the answer
             return newMatrix;
         }
 
         //perform the multiplication operation on the matrix passed in
-        public Matrix Multiply(Matrix matrix)
+        public Matrix Multiply(Matrix otherMatrix)
         {
-            //throw exception if either matrix is invalic or non existant
-            if (NumberOfRows == 0 || NumberOfColumns == 0 || matrix == null || matrix.NumberOfRows == 0 || matrix.NumberOfColumns == 0)
-                throw new InvalidOperationException("Please initialize A and B matrix");
-
-            //throw an exception if the 2 matrices are unable to be multiplied
-            if (NumberOfColumns != matrix.NumberOfRows)
-                throw new InvalidOperationException("Please check dimensions of A and B matrices");
+            if (object.Equals(otherMatrix,null))
+                throw new ArgumentNullException("Matrix is null");
+            if (!dimsEqual(otherMatrix))
+                throw new ArgumentException("Dimensions don't match");
 
             //create new matrix to store answer
-            Matrix newMatrix = new Matrix(NumberOfRows, matrix.NumberOfColumns);
+            Matrix newMatrix = new Matrix(Rows, otherMatrix.Cols);
 
             //loop through matrix
-            for (int i = 0; i < newMatrix.NumberOfRows; i++)
+            for (int i = 0; i < newMatrix.Rows; i++)
             {
-                for (int j = 0; j < newMatrix.NumberOfColumns; j++)
+                for (int j = 0; j < newMatrix.Cols; j++)
                 {
                     //init the element
-                    newMatrix.Element[i, j] = 0;
+                    newMatrix[i, j] = 0;
 
                     //perform operation and store the answer in the new matrix
                     //taken from: https://stackoverflow.com/questions/6311309/how-can-i-multiply-two-matrices-in-c
-                    for (int k = 0; k < NumberOfColumns; k++)
-                        newMatrix.Element[i, j] = 
-                            newMatrix.Element[i,j] + (Element[i, k] * matrix.Element[k, j]);
+                    for (int k = 0; k < Cols; k++)
+                        newMatrix.matrix[i, j] = 
+                            newMatrix[i,j] + (this[i, k] * otherMatrix[k, j]);
                 }
             }
             //return new matrix holding the answer
             return newMatrix;
+        }
+
+        //checks if the matrices have same number of columns
+        public bool colsEqual(Matrix matrix)
+        {
+            return Cols == matrix.Cols;
+        }
+
+        //checks if the matrices have the same number of rows
+        public bool rowsEqual(Matrix matrix)
+        {
+            return Rows == matrix.Rows;
+        }
+
+        //checks if the matrices have the same dimensions
+        public bool dimsEqual(Matrix matrix)
+        {
+            return colsEqual(matrix) && rowsEqual(matrix);
+        }
+
+        public double this[int row, int column] {
+            get => matrix[row, column];
+            set => matrix[row, column] = value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            Matrix otherMatrix = obj as Matrix;
+
+            if (!rowsEqual(otherMatrix) || !colsEqual(otherMatrix))
+                return false;
+
+            for (int i = 0; i < Rows; ++i)
+            {
+                for (int j = 0; j < Cols; ++j)
+                {
+                    if (otherMatrix[i, j] != this[i, j]) return false;
+                }
+            }
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return sum().GetHashCode();
+        }
+
+        public Matrix clone()
+        {
+            Matrix newMatrix = new Matrix(Rows, Cols);
+
+            for (int i = 0; i < this.Rows; ++i)
+            {
+                for (int j = 0; j < this.Cols; ++j)
+                {
+                    newMatrix[i, j] = this[i, j];
+                }
+            }
+
+            return newMatrix;
+        }
+
+        public void clone(Matrix otherMatrix)
+        {
+            matrix = new double[otherMatrix.Rows, otherMatrix.Cols];
+
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    this[i, j] = otherMatrix[i, j];
+                }
+            }
+        }
+
+        //add all the elements in the matrix
+        public double sum()
+        {
+            double total = 0;
+
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    total += this[i, j];
+                }
+            }
+
+            return total;
+        }
+
+        public bool Equals(Matrix other)
+        {
+            if (other == null) return false;
+            //return false if other is null or a different size matrix
+            if (!dimsEqual(other)) return false;
+
+            //check if all numbers are the same
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Cols; j++)
+                {
+                    if (matrix[i, j] != other.matrix[i, j])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         //override the tostring to make output easier
         public override string ToString()
         {
             //create stringbuilder to piece together the matrix
-            StringBuilder toString = new StringBuilder();
+            StringBuilder output = new StringBuilder();
 
             //loop through the matrix
-            for (int i = 0; i < NumberOfRows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < NumberOfColumns; j++)
+                for (int j = 0; j < Cols; j++)
                 {
                     //create a string holding the element of the matrix
-                    string element = String.Format("{0:f1}",Element[i, j]);
+                    string element = String.Format("{0:f1}",matrix[i, j]);
                     string mod = String.Empty;
 
                     //better formatting for last column in the matrix row
-                    if (j != NumberOfColumns - 1)
+                    if (j != Cols - 1)
                         mod = "\t";
  
                     //add the element string with modifier to the string builder
-                    toString.Append(element + mod);
+                    output.Append(element + mod);
                 }
 
                 //add a newline to the stringbuilder for a new row in the matrix
-                toString.AppendLine();
+                output.AppendLine();
             }
             //return the built up string
-            return toString.ToString();
+            return output.ToString();
         }
+
+        public static bool operator ==(Matrix A, Matrix B)
+        {
+            if (!object.Equals(A, null))
+                return A.Equals(B);
+
+            return object.Equals(B, null);
+        }
+
+        public static bool operator !=(Matrix A, Matrix B)
+        {
+            return !(A == B);
+        }
+
+        public static Matrix operator +(Matrix A, Matrix B)
+        {
+            if (object.Equals(A, null) || object.Equals(B, null))
+                throw new Exception("One or both vectors are null");
+            if (!A.dimsEqual(B))
+                throw new Exception("Dimensions don't match");
+
+            return A.Addition(B);
+        }
+
+        public static Matrix operator -(Matrix A, Matrix B)
+        {
+            if (object.Equals(A,null) || object.Equals(B,null))
+                throw new Exception("One or both vectors are null");
+            if (!A.dimsEqual(B))
+                throw new Exception("Dimensions don't match");
+
+            return A.Subtraction(B);
+        }
+
+        public static Matrix operator *(Matrix A, Matrix B)
+        {
+            if (object.Equals(A, null) || object.Equals(B, null))
+                throw new Exception("One or both vectors are null");
+            if (A.Rows != B.Cols || A.Cols != B.Rows)
+                throw new Exception("Dimension mismatch for multiplication");
+
+            return A.Multiply(B);
+        }
+
     }
 }
