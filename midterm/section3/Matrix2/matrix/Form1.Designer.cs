@@ -288,7 +288,7 @@ namespace matrix
             this.buttonClone.TabIndex = 22;
             this.buttonClone.Text = "Make B Copy of A";
             this.buttonClone.UseVisualStyleBackColor = true;
-            this.buttonClone.Click += new System.EventHandler(this.button1_Click);
+            this.buttonClone.Click += new System.EventHandler(this.buttonClone_Click);
             // 
             // rbnABEq
             // 
