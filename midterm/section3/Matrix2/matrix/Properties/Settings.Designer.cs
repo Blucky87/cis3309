@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Matrix2.Properties
+namespace matrix.Properties
 {
 
 
