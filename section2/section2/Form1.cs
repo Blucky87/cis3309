@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -14,7 +15,12 @@ namespace section2
             InitializeComponent();
 
             //sets the initial students
-            loadStudents(new BindingList<Student>());
+            BindingList<Student> sampleStudents = new BindingList<Student>();
+            sampleStudents.Add(new Student("Joe Schmo", new List<int>{88, 92, 77}));
+            sampleStudents.Add(new Student("John Smith", new List<int> { 99, 100, 72, 66, 81, 95 }));
+            sampleStudents.Add(new Student("Susie Smith", new List<int> { 60, 70, 80, 90 }));
+
+            loadStudents(sampleStudents);
         }
 
         private void loadStudents(BindingList<Student> studentList)
@@ -132,6 +138,11 @@ namespace section2
 
             if (studentList.Count == 0)
                 clearScoreStats();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
