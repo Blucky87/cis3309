@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace CarInvoice
 {
@@ -20,17 +21,17 @@ namespace CarInvoice
         }
 
         public double Discount;
-        public string ID;
+        public int ID;
 
         public Invoice()
         {
             Car = new Car();
             Customer = new Customer();
-            Discount = double.NaN;
-            ID = string.Empty;
+            Discount = 0.0;
+            ID = 0;
         }
 
-        public Invoice(Car car, Customer customer, double discount, string id)
+        public Invoice(Car car, Customer customer, double discount, int id)
         {
             Car = car;
             Customer = customer;

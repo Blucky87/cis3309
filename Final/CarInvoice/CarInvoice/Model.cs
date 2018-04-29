@@ -49,10 +49,7 @@ namespace CarInvoice
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            foreach (var package in this)
-            {
-                stringBuilder.AppendLine(package.ToString());
-            }
+            ForEach(x => stringBuilder.AppendLine(x.ToString()));
 
             return stringBuilder.ToString();
         }
