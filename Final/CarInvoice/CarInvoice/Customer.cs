@@ -8,13 +8,13 @@ namespace CarInvoice
         public string Address;
         public string City;
         public string FirstName;
-        public string ID;
+        public int ID;
         public string LastName;
         public string State;
         public string ZipCode;
 
 
-        public Customer(string address, string city, string firstName, string id, string lastName, string state,
+        public Customer(string address, string city, string firstName, int id, string lastName, string state,
             string zipCode)
         {
             Address = address;
@@ -31,7 +31,7 @@ namespace CarInvoice
             Address = string.Empty;
             City = string.Empty;
             FirstName = string.Empty;
-            ID = string.Empty;
+            ID = 0;
             LastName = string.Empty;
             State = string.Empty;
             ZipCode = string.Empty;

@@ -8,11 +8,11 @@ namespace CarInvoice
     {
         public int ID { get; set; }
         public string Description { get; set; }
-        public string ModelID { get; set; }
+        public int ModelID { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
 
-        public Package(int id, string description, string modelId, string name, double price)
+        public Package(int id, string description, int modelId, string name, double price)
         {
             ID = id;
             Description = description;
@@ -25,7 +25,7 @@ namespace CarInvoice
         {
             ID = 0;
             Description = string.Empty;
-            ModelID = string.Empty;
+            ModelID = 0;
             Name = string.Empty;
             Price = 0;
         }
