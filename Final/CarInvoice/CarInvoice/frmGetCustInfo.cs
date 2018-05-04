@@ -29,14 +29,33 @@ namespace CarInvoice
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            Customer customer = new Customer();
+            customer.Address = txtAddress.Text;
+            customer.City = txtCity.Text;
+            customer.FirstName = txtFirstName.Text;
+            customer.LastName = txtLastName.Text;
+            customer.State = txtState.Text;
+            customer.ZipCode = txtZipCode.Text;
 
+            Tag = customer;
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtAddress.Text = string.Empty;
+            txtCity.Text = string.Empty;
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtState.Text = string.Empty;
+            txtZipCode.Text = string.Empty;
         }
     }
 }

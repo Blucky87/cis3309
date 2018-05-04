@@ -16,5 +16,22 @@ namespace CarInvoice
         {
             InitializeComponent();
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            int id;
+            bool valid = Int32.TryParse(txtCustID.Text, out id);
+
+            if (valid)
+            {
+                DialogResult = DialogResult.OK;
+                Tag = id;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Not a valid integer value.");
+            }
+        }
     }
 }

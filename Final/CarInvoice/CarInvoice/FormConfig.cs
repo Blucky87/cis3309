@@ -1,7 +1,12 @@
-﻿namespace CarInvoice
+﻿using System;
+
+namespace CarInvoice
 {
-    public class FormConfig
+    public static class FormConfig
     {
-        
+        public static void DrawConfigCarFrom(frmMain frmMain)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

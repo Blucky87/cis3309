@@ -1,1 +1,0 @@
-Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\repo\cis3309\Final\CarInvoice\CarInvoice\CarDB.mdb

@@ -51,6 +51,12 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FormConfig.cs" />
+    <Compile Include="frmBuildCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuildCar.Designer.cs">
+      <DependentUpon>frmBuildCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGetCustID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Package.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBuildCar.resx">
+      <DependentUpon>frmBuildCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGetCustID.resx">
       <DependentUpon>frmGetCustID.cs</DependentUpon>
     </EmbeddedResource>
