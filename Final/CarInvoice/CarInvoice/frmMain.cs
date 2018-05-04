@@ -57,7 +57,6 @@ namespace CarInvoice
                 customer = carDb.SelectCustomer((Int32)frmGetCustId.Tag);
 
                 frmBuildCar frmBuildCar = new frmBuildCar(customer);
-                frmBuildCar.StartPosition = FormStartPosition.CenterParent;
                 frmBuildCar.ShowDialog();
 
                 if (frmBuildCar.DialogResult == DialogResult.Cancel) Close();
