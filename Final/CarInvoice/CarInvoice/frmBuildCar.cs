@@ -41,7 +41,7 @@ namespace CarInvoice
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Abort;
             Close();
         }
 

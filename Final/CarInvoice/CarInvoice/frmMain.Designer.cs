@@ -35,6 +35,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(313, 334);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(181, 43);
@@ -75,7 +76,7 @@
             this.Controls.Add(this.btnRegister);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "Car Order Kiosk";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 

@@ -59,7 +59,7 @@ namespace CarInvoice
                 frmBuildCar frmBuildCar = new frmBuildCar(customer);
                 frmBuildCar.ShowDialog();
 
-                if (frmBuildCar.DialogResult == DialogResult.Cancel) Close();
+                if (frmBuildCar.DialogResult == DialogResult.Abort) Close();
             }
         }
     }
